@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+  input[type=text], input[type=password] {
+  width: 100%;
+  color: #ffffff;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block; 
+  border: 1.5px solid aliceblue;
+  background:none;
+  border-radius: 5px; 
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  transition:0.25s;
+  outline: none;
+  background:none;
+}
+.container input[type="text"]:focus,.container input[type="password"]:focus{
+  border-color:cadetblue;
+  }
+
+.container {
+  padding: 16px;
+}
+.lin{
+  text-decoration: none;
+}
+ body{
+  padding-left: 25%;
+  padding-right: 25%;
+} 
+.clearfix button[type="submit"],.clearfix button[type="button"]{
+  width: 100px;
+  height: 40px;
+}
+/* .bd{
+  height: 400px;
+}  
+#myVideo {
+  position: fixed;
+  size: 100%;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}  */
+#myVideo{
+  position:fixed;
+  width: 100%;
+  size: 100%;
+  right: 0;
+  bottom: 0;
+}
+.content {
+  position: relative;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1; 
+  width: 100%;
+  padding-bottom: 100px;
+  padding-top: 50px;
+
+}
+.frm{
+
+  margin-top:10px;
+  margin-bottom:10px;
+  border: none;
+  border-style: hidden;
+  /* border-radius: 20px;  */
+} 
+::placeholder{
+  color: rgb(203, 200, 209);
+  opacity:1;
+}
+h1{
+  /* font-family: 'Lobster', cursive; */
+  font-family: 'Noto Sans HK', sans-serif;
+  display: swap;
+  text-align: center;
+}
+label{
+  font-weight: 500;
+}

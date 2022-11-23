@@ -1,0 +1,54 @@
+{
+  "signupUser": [
+    {
+      "UserName": "Ravi",
+      "PhoneNumber": "7708205620",
+      "Email": "ravi@gmail.com",
+      "Password": "Ravi@12345678",
+      "ConfirmPassword": "Ravi@12345678",
+      "id": 1
+    },
+    {
+      "UserName": "Sara",
+      "PhoneNumber": "7708205620",
+      "Email": "sara@gmail.com",
+      "Password": "sara12345678",
+      "ConfirmPassword": "sara12345678",
+      "id": 2
+    },
+    {
+      "UserName": "kamal",
+      "PhoneNumber": "7708205620",
+      "Email": "kamalesh@gmail..com",
+      "Password": "123456789",
+      "ConfirmPassword": "123456789",
+      "id": 3
+    },
+    {
+      "UserName": "Gowshika",
+      "PhoneNumber": "7708205620",
+      "Email": "gowshika.rp@prodapt.com",
+      "Password": "Gowshika@44",
+      "ConfirmPassword": "Gowshika@44",
+      "id": 4
+    },
+    {
+      "UserName": "Gowshi",
+      "PhoneNumber": "7708205620",
+      "Email": "gowshir@gmail.com",
+      "Password": "12345678",
+      "ConfirmPassword": "12345678",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

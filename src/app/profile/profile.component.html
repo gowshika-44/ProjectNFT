@@ -1,0 +1,28 @@
+<!-- <div class="container text-center">
+    <img [src]="url" height="200"><br>
+    <input type="file" (change)="onselectFile($event)">
+</div> -->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-box">
+            <img [src]="url" class="profile-pic">
+            <div class="button-wrap">
+                <label class="button" for="upload">Edit</label>
+                <input id="upload" type="file" (change)="onselectFile($event)">
+              </div>
+            <h3>Kamalesh</h3>
+            <p>Web Developer at Prodapt</p>
+            <button type="file" (click)="backoff()">Logout</button>
+            <div class="profile-bottom">
+                <label for="email">Email :</label>
+                <p name="email">admin@123</p>
+               <img src="/assets/others/homeicon.png" (click)=" goto()" width="20px" height="20px">
+            </div>
+            
+
+        </div>
+    </div>
+</body>

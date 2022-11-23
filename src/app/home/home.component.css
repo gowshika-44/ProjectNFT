@@ -1,0 +1,804 @@
+body{
+    background-color: black;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.slide{
+    height: 150px;
+    width: 200px;
+    display: grid;
+    place-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+
+img{
+    height: 100%;
+    width:100%;
+    transition: transform 1s;
+}
+.image-slider{
+    
+    display: grid;
+    /* place-items: center; */
+    position: relative;
+    overflow: hidden;
+    height: 250px;  
+    width: 100%;
+}
+.image-slider-track{
+    display: flex;
+    width:calc(200px*12);
+    animation: play 40s linear infinite;
+}
+
+@keyframes play{
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(calc(-250px*6));
+    }
+}
+
+.image-slider::before,
+.image-slider::after{
+    background: linear-gradient(to right,rgb(0, 0, 0)0%,rgba(255,255,255,0)100%);
+    content: '';
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+    position: absolute;
+
+    }
+
+    .image-slider::before{
+        left:0;
+        top:0;
+    }
+
+    .image-slider::after{
+        right:0;
+        top:0;
+        background: linear-gradient(to left,rgb(0, 0, 0)0%,rgba(255,255,255,0)100%);
+
+    }
+
+    img:hover{
+        transform: translateZ(20px);
+    }
+    
+/* #myVideo{
+  position:fixed;
+  width: 100%;
+  size: 100%;
+  right: 0;
+  bottom: 0;
+} */
+.toptool{
+    /* color: beige; */
+    font-family: 'Russo One', sans-serif;
+    background-color: black;
+}
+.navbtn:hover{
+    background:none;
+}
+.navbtn{
+    cursor: pointer;
+    margin-left: 85%;
+    width: 120px;
+    border-radius: 25px;
+    height: 40px;
+    background-color: cornflowerblue;
+    color: aliceblue;
+    font-weight: 800;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Alegreya:400,400italic,700italic,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic);
+.info {
+    -webkit-animation: info-appear 3s 1;
+    -moz-animation: info-appear 3s 1;
+    -o-animation: info-appear 3s 1;
+    animation: info-appear 3s 1;
+  }
+  
+  .infobox {
+    width: 600px;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    vertical-align: middle;
+    text-align: center;
+    /*.title
+    * overlay: hidden
+    * h1
+    *  display: inline-block
+    *  width: 300px
+    *  font-family: 'Oswald', serif
+    *  font-weight: 400
+    *  font-size: 6em
+    *  text-transform: uppercase
+    *  background: #141414
+    *  padding: 20px
+    *  border: 1px solid black
+    * h1:nth-child(2), h1:nth-child(3)
+    *  background: white
+    *  color: #141414
+    *  margin-top: -20px
+    * &:before
+    *  content: ' '
+    *  width: 100%*/
+    /*.terminal
+    * position: relative
+    * top: 0
+    * left: 0
+    * right: 0
+    * background: rgba(0, 0, 0, 0.7)
+    * border-top: 15px solid white
+    * border-radius: 0.5em
+    * text-align: left
+    * padding: 10px
+    * font-size: 1.4em
+    * word-spacing: 0.3em
+    * &:before
+    *  content: ' '
+    *  position: absolute
+    *  top: -12px
+    *  left: 10px
+    *  width: 10px
+    *  height: 10px
+    *  border-radius: 50%
+    *  background: pink*/
+  }
+  .infobox:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: " ";
+    background: white;
+    width: 0;
+    height: 0;
+    overflow: visible;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: left top;
+    -moz-transform-origin: left top;
+    -o-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-animation: opening-left 2s 1;
+    -moz-animation: opening-left 2s 1;
+    -o-animation: opening-left 2s 1;
+    animation: opening-left 2s 1;
+  }
+  .infobox:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    content: " ";
+    background: white;
+    width: 0;
+    height: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: right bottom;
+    -moz-transform-origin: right bottom;
+    -o-transform-origin: right bottom;
+    transform-origin: right bottom;
+    overflow: visible;
+    -webkit-animation: opening-right 2s 1;
+    -moz-animation: opening-right 2s 1;
+    -o-animation: opening-right 2s 1;
+    animation: opening-right 2s 1;
+  }
+  .infobox .title {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    margin-top: -30px;
+    margin-bottom: -30px;
+  }
+  .infobox .title h1 {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 5em;
+    letter-spacing: 0.25em;
+    margin-right: -0.3em;
+    position: relative;
+    font-weight: 300;
+  }
+  .infobox .links {
+    margin-bottom: 10px;
+    margin-top: 50px;
+  }
+  .infobox .links a, .infobox .links a:hover, .infobox .links a:visited {
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2.2em;
+    font-weight: 300;
+    color: pink;
+    letter-spacing: 0.3em;
+    border: 1px solid pink;
+    padding-left: 0.3em;
+    -webkit-animation: bg 1.2s 2s ease-in-out 1;
+    -moz-animation: bg 1.2s 2s ease-in-out 1;
+    -o-animation: bg 1.2s 2s ease-in-out 1;
+    animation: bg 1.2s 2s ease-in-out 1;
+  }
+  .infobox .links a:nth-child(2), .infobox .links a:hover:nth-child(2), .infobox .links a:visited:nth-child(2) {
+    margin-left: 10px;
+    margin-right: 10px;
+    -webkit-animation-delay: 2.2s;
+    -moz-animation-delay: 2.2s;
+    -o-animation-delay: 2.2s;
+    animation-delay: 2.2s;
+  }
+  .infobox .links a:nth-child(3), .infobox .links a:hover:nth-child(3), .infobox .links a:visited:nth-child(3) {
+    -webkit-animation-delay: 2.4s;
+    -moz-animation-delay: 2.4s;
+    -o-animation-delay: 2.4s;
+    animation-delay: 2.4s;
+  }
+  .infobox .links a:hover {
+    background: yellow;
+    color: #141414;
+  }
+  .infobox .subtitle {
+    clear: both;
+    position: relative;
+    color: pink;
+  }
+  .infobox .subtitle:before, .infobox .subtitle:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    width: 30%;
+    height: 50%;
+    border-bottom: 1px dotted Crimson;
+  }
+  .infobox .subtitle:before {
+    left: 0;
+  }
+  .infobox .subtitle:after {
+    right: 0;
+  }
+  .infobox .subtitle span {
+    font-family: "Alegreya", serif;
+    font-size: 2.5em;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .lantern {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .lantern .hook {
+    position: relative;
+    width: 10px;
+    height: 5px;
+    background: black;
+    margin: 0 auto;
+    margin-top: 10px;
+    -webkit-box-shadow: 0 55px 0 0px #000;
+    -moz-box-shadow: 0 55px 0 0px #000;
+    -o-box-shadow: 0 55px 0 0px #000;
+    box-shadow: 0 55px 0 0px #000;
+    /*&:before
+    * content: ' '
+    * position: absolute
+    * top: -5px 
+    * left: 50%
+    * transform: translateX(-50%)
+    * width: 6px
+    * height: 5px
+    * border-radius: 50% 50% 0 0
+    * border-left: 2px solid black
+    * border-right: 2px solid black
+    * border-top: 2px solid black
+    * z-index: -1*/
+  }
+  .lantern .circle {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ff6666;
+    position: relative;
+    -webkit-box-shadow: 0 0 20px 0px white;
+    -moz-box-shadow: 0 0 20px 0px white;
+    -o-box-shadow: 0 0 20px 0px white;
+    box-shadow: 0 0 20px 0px white;
+  }
+  .lantern .circle:before {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-left: 2px solid rgba(204, 82, 82, 0.8);
+    border-right: 2px solid rgba(204, 82, 82, 0.8);
+    width: 15px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .lantern .circle:after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-left: 2px solid rgba(204, 82, 82, 0.9);
+    border-right: 2px solid rgba(204, 82, 82, 0.9);
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .lantern .circle .glow {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 0, 0.7);
+    -webkit-box-shadow: 0 0 15px 10px yellow;
+    -moz-box-shadow: 0 0 15px 10px yellow;
+    -o-box-shadow: 0 0 15px 10px yellow;
+    box-shadow: 0 0 15px 10px yellow;
+    border-radius: 50%;
+    margin: 0 auto;
+    -webkit-animation: lantern 2s infinite ease-in-out forwards;
+    -moz-animation: lantern 2s infinite ease-in-out forwards;
+    -o-animation: lantern 2s infinite ease-in-out forwards;
+    animation: lantern 2s infinite ease-in-out forwards;
+  }
+  
+  @-webkit-keyframes opening-left {
+    from {
+      left: 30%;
+      top: 30%;
+      height: 0;
+      width: 1px;
+    }
+    50% {
+      left: 30%;
+      top: 30%;
+      height: 200px;
+      width: 1px;
+    }
+    90% {
+      left: 0;
+      top: 0;
+    }
+    to {
+      left: 0;
+      top: 0;
+      height: 0;
+    }
+  }
+  @-moz-keyframes opening-left {
+    from {
+      left: 30%;
+      top: 30%;
+      height: 0;
+      width: 1px;
+    }
+    50% {
+      left: 30%;
+      top: 30%;
+      height: 200px;
+      width: 1px;
+    }
+    90% {
+      left: 0;
+      top: 0;
+    }
+    to {
+      left: 0;
+      top: 0;
+      height: 0;
+    }
+  }
+  @-o-keyframes opening-left {
+    from {
+      left: 30%;
+      top: 30%;
+      height: 0;
+      width: 1px;
+    }
+    50% {
+      left: 30%;
+      top: 30%;
+      height: 200px;
+      width: 1px;
+    }
+    90% {
+      left: 0;
+      top: 0;
+    }
+    to {
+      left: 0;
+      top: 0;
+      height: 0;
+    }
+  }
+  @keyframes opening-left {
+    from {
+      left: 30%;
+      top: 30%;
+      height: 0;
+      width: 1px;
+    }
+    50% {
+      left: 30%;
+      top: 30%;
+      height: 200px;
+      width: 1px;
+    }
+    90% {
+      left: 0;
+      top: 0;
+    }
+    to {
+      left: 0;
+      top: 0;
+      height: 0;
+    }
+  }
+  @-webkit-keyframes opening-right {
+    from {
+      right: 30%;
+      bottom: 30%;
+      height: 0;
+      width: 1px;
+    }
+    50% {
+      right: 30%;
+      bottom: 30%;
+      height: 200px;
+      width: 1px;
+    }
+    90% {
+      right: 0;
+      bottom: 0;
+    }
+    to {
+      right: 0;
+      bottom: 0;
+      height: 0;
+    }
+  }
+  @-moz-keyframes opening-right {
+    from {
+      right: 30%;
+      bottom: 30%;
+      height: 0;
+      width: 1px;
+    }
+    50% {
+      right: 30%;
+      bottom: 30%;
+      height: 200px;
+      width: 1px;
+    }
+    90% {
+      right: 0;
+      bottom: 0;
+    }
+    to {
+      right: 0;
+      bottom: 0;
+      height: 0;
+    }
+  }
+  @-o-keyframes opening-right {
+    from {
+      right: 30%;
+      bottom: 30%;
+      height: 0;
+      width: 1px;
+    }
+    50% {
+      right: 30%;
+      bottom: 30%;
+      height: 200px;
+      width: 1px;
+    }
+    90% {
+      right: 0;
+      bottom: 0;
+    }
+    to {
+      right: 0;
+      bottom: 0;
+      height: 0;
+    }
+  }
+  @keyframes opening-right {
+    from {
+      right: 30%;
+      bottom: 30%;
+      height: 0;
+      width: 1px;
+    }
+    50% {
+      right: 30%;
+      bottom: 30%;
+      height: 200px;
+      width: 1px;
+    }
+    90% {
+      right: 0;
+      bottom: 0;
+    }
+    to {
+      right: 0;
+      bottom: 0;
+      height: 0;
+    }
+  }
+  @-webkit-keyframes info-appear {
+    from {
+      opacity: 0;
+      filter: blur(3px);
+    }
+    50% {
+      opacity: 0;
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes info-appear {
+    from {
+      opacity: 0;
+      filter: blur(3px);
+    }
+    50% {
+      opacity: 0;
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-o-keyframes info-appear {
+    from {
+      opacity: 0;
+      filter: blur(3px);
+    }
+    50% {
+      opacity: 0;
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes info-appear {
+    from {
+      opacity: 0;
+      filter: blur(3px);
+    }
+    50% {
+      opacity: 0;
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes bg {
+    from {
+      background: yellow;
+      color: #141414;
+    }
+    to {
+      background: transparent;
+      color: pink;
+    }
+  }
+  @-moz-keyframes bg {
+    from {
+      background: yellow;
+      color: #141414;
+    }
+    to {
+      background: transparent;
+      color: pink;
+    }
+  }
+  @-o-keyframes bg {
+    from {
+      background: yellow;
+      color: #141414;
+    }
+    to {
+      background: transparent;
+      color: pink;
+    }
+  }
+  @keyframes bg {
+    from {
+      background: yellow;
+      color: #141414;
+    }
+    to {
+      background: transparent;
+      color: pink;
+    }
+  }
+  @-webkit-keyframes lantern {
+    0%, 100% {
+      -webkit-box-shadow: 0 0 15px 10px yellow;
+      -moz-box-shadow: 0 0 15px 10px yellow;
+      -o-box-shadow: 0 0 15px 10px yellow;
+      box-shadow: 0 0 15px 10px yellow;
+    }
+    10%, 90% {
+      -webkit-box-shadow: 0 0 15px 11px yellow;
+      -moz-box-shadow: 0 0 15px 11px yellow;
+      -o-box-shadow: 0 0 15px 11px yellow;
+      box-shadow: 0 0 15px 11px yellow;
+    }
+    20%, 80% {
+      -webkit-box-shadow: 0 0 15px 12px yellow;
+      -moz-box-shadow: 0 0 15px 12px yellow;
+      -o-box-shadow: 0 0 15px 12px yellow;
+      box-shadow: 0 0 15px 12px yellow;
+    }
+    30%, 70% {
+      -webkit-box-shadow: 0 0 15px 13px yellow;
+      -moz-box-shadow: 0 0 15px 13px yellow;
+      -o-box-shadow: 0 0 15px 13px yellow;
+      box-shadow: 0 0 15px 13px yellow;
+    }
+    40%, 60% {
+      -webkit-box-shadow: 0 0 15px 14px yellow;
+      -moz-box-shadow: 0 0 15px 14px yellow;
+      -o-box-shadow: 0 0 15px 14px yellow;
+      box-shadow: 0 0 15px 14px yellow;
+    }
+    50% {
+      -webkit-box-shadow: 0 0 15px 15px yellow;
+      -moz-box-shadow: 0 0 15px 15px yellow;
+      -o-box-shadow: 0 0 15px 15px yellow;
+      box-shadow: 0 0 15px 15px yellow;
+    }
+  }
+  @-moz-keyframes lantern {
+    0%, 100% {
+      -webkit-box-shadow: 0 0 15px 10px yellow;
+      -moz-box-shadow: 0 0 15px 10px yellow;
+      -o-box-shadow: 0 0 15px 10px yellow;
+      box-shadow: 0 0 15px 10px yellow;
+    }
+    10%, 90% {
+      -webkit-box-shadow: 0 0 15px 11px yellow;
+      -moz-box-shadow: 0 0 15px 11px yellow;
+      -o-box-shadow: 0 0 15px 11px yellow;
+      box-shadow: 0 0 15px 11px yellow;
+    }
+    20%, 80% {
+      -webkit-box-shadow: 0 0 15px 12px yellow;
+      -moz-box-shadow: 0 0 15px 12px yellow;
+      -o-box-shadow: 0 0 15px 12px yellow;
+      box-shadow: 0 0 15px 12px yellow;
+    }
+    30%, 70% {
+      -webkit-box-shadow: 0 0 15px 13px yellow;
+      -moz-box-shadow: 0 0 15px 13px yellow;
+      -o-box-shadow: 0 0 15px 13px yellow;
+      box-shadow: 0 0 15px 13px yellow;
+    }
+    40%, 60% {
+      -webkit-box-shadow: 0 0 15px 14px yellow;
+      -moz-box-shadow: 0 0 15px 14px yellow;
+      -o-box-shadow: 0 0 15px 14px yellow;
+      box-shadow: 0 0 15px 14px yellow;
+    }
+    50% {
+      -webkit-box-shadow: 0 0 15px 15px yellow;
+      -moz-box-shadow: 0 0 15px 15px yellow;
+      -o-box-shadow: 0 0 15px 15px yellow;
+      box-shadow: 0 0 15px 15px yellow;
+    }
+  }
+  @-o-keyframes lantern {
+    0%, 100% {
+      -webkit-box-shadow: 0 0 15px 10px yellow;
+      -moz-box-shadow: 0 0 15px 10px yellow;
+      -o-box-shadow: 0 0 15px 10px yellow;
+      box-shadow: 0 0 15px 10px yellow;
+    }
+    10%, 90% {
+      -webkit-box-shadow: 0 0 15px 11px yellow;
+      -moz-box-shadow: 0 0 15px 11px yellow;
+      -o-box-shadow: 0 0 15px 11px yellow;
+      box-shadow: 0 0 15px 11px yellow;
+    }
+    20%, 80% {
+      -webkit-box-shadow: 0 0 15px 12px yellow;
+      -moz-box-shadow: 0 0 15px 12px yellow;
+      -o-box-shadow: 0 0 15px 12px yellow;
+      box-shadow: 0 0 15px 12px yellow;
+    }
+    30%, 70% {
+      -webkit-box-shadow: 0 0 15px 13px yellow;
+      -moz-box-shadow: 0 0 15px 13px yellow;
+      -o-box-shadow: 0 0 15px 13px yellow;
+      box-shadow: 0 0 15px 13px yellow;
+    }
+    40%, 60% {
+      -webkit-box-shadow: 0 0 15px 14px yellow;
+      -moz-box-shadow: 0 0 15px 14px yellow;
+      -o-box-shadow: 0 0 15px 14px yellow;
+      box-shadow: 0 0 15px 14px yellow;
+    }
+    50% {
+      -webkit-box-shadow: 0 0 15px 15px yellow;
+      -moz-box-shadow: 0 0 15px 15px yellow;
+      -o-box-shadow: 0 0 15px 15px yellow;
+      box-shadow: 0 0 15px 15px yellow;
+    }
+  }
+  @keyframes lantern {
+    0%, 100% {
+      -webkit-box-shadow: 0 0 15px 10px yellow;
+      -moz-box-shadow: 0 0 15px 10px yellow;
+      -o-box-shadow: 0 0 15px 10px yellow;
+      box-shadow: 0 0 15px 10px yellow;
+    }
+    10%, 90% {
+      -webkit-box-shadow: 0 0 15px 11px yellow;
+      -moz-box-shadow: 0 0 15px 11px yellow;
+      -o-box-shadow: 0 0 15px 11px yellow;
+      box-shadow: 0 0 15px 11px yellow;
+    }
+    20%, 80% {
+      -webkit-box-shadow: 0 0 15px 12px yellow;
+      -moz-box-shadow: 0 0 15px 12px yellow;
+      -o-box-shadow: 0 0 15px 12px yellow;
+      box-shadow: 0 0 15px 12px yellow;
+    }
+    30%, 70% {
+      -webkit-box-shadow: 0 0 15px 13px yellow;
+      -moz-box-shadow: 0 0 15px 13px yellow;
+      -o-box-shadow: 0 0 15px 13px yellow;
+      box-shadow: 0 0 15px 13px yellow;
+    }
+    40%, 60% {
+      -webkit-box-shadow: 0 0 15px 14px yellow;
+      -moz-box-shadow: 0 0 15px 14px yellow;
+      -o-box-shadow: 0 0 15px 14px yellow;
+      box-shadow: 0 0 15px 14px yellow;
+    }
+    50% {
+      -webkit-box-shadow: 0 0 15px 15px yellow;
+      -moz-box-shadow: 0 0 15px 15px yellow;
+      -o-box-shadow: 0 0 15px 15px yellow;
+      box-shadow: 0 0 15px 15px yellow;
+    }
+  }

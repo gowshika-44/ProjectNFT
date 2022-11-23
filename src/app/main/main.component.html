@@ -1,0 +1,87 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="sidebarmenu.toggle()">menu</mat-icon>
+      </button>
+        <div class="D">
+          <input type="text" class="AA" name="search" id="" placeholder="Search for Products" (keyup)="searchById()" [(ngModel)]="varpro">
+          &nbsp;
+          <mat-icon class="profile" (click)="profile()" style="font-size: 26px;">account_circle</mat-icon> &nbsp;
+          <mat-icon class="cartbtn" (click)="cartnav()" style="font-size: 26px;">shopping_cart_checkout</mat-icon> &nbsp;
+          <!-- <button  mat-raised-button class="BB" >Search</button> (click)="searchById()" -->
+        </div>
+        <span class="example-spacer"></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidebarmenu>
+      <mat-nav-list>
+        <a mat-list-item href="#"> Home </a>
+        <a mat-list-item [routerLink]="'/profile'"> Profile </a>
+        <a mat-list-item [routerLink]="'/cart'"> My Cart </a>
+        <a mat-list-item (click)="sidebarmenu.toggle()" href="/sign" mat-list-item>
+         Logout
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    
+    <mat-sidenav-content>
+     <!-- <div class="card" >
+      <div class="row row-cols-2 row-cols-sm-3">
+      <div class="product-card" *ngFor="let pro of getdet" style="width: 18 rem;">
+        
+        <div class="badge">Hot</div>
+        <div class="product-tumb">
+            <img class="card-img-top" src={{pro.ImageUrl}} alt="Card image cap" height="170px" width="100px">
+               <div class="product-details">
+                  <span class="product-catagory"> <p class="card-text"><span>Name : </span>{{pro.Name}}</p></span>
+                  <p class="card-text"><span>Price : </span>{{pro.Price}}</p>
+            <p class="card-text"><span>Creator : </span>{{pro.Creator}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div> -->
+    
+    <div class="big">
+    <div class="row row-cols-3 row-cols-sm-2">
+    <div class="cardContainer inactive" *ngFor="let pro of getdet">
+      <div class="card" >
+        <div class="side front">
+          <img class="img" src={{pro.ImageUrl}} alt="Card image cap">
+         
+          <div class="info">
+            
+              <p class="card-text"><span></span>{{pro.Name}}</p>
+              <p class="card-text"><span>Creator : </span>{{pro.Creator}}</p>
+              <p class="card-text">
+                <span>
+                  <mat-icon (click)="plus(pro)" mat-icon-button style="color: rgb(0, 255, 34);">thumb_up</mat-icon>
+                  $
+                </span>
+                {{pro.Price}}
+                <!--  <mat-icon  mat-icon-button style="color:rgb(255, 51, 0);">thumb_down</mat-icon> -->
+              </p> 
+                
+                  <button mat-raised-button  class="addcart" (click)="AddCart(pro)">Add to Cart</button>
+                  
+                  <!-- <span>{{pro.Like}}</span>
+                   &nbsp; -->
+                
+            </div>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+    <div style="height: 92vh">
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+ 

@@ -1,0 +1,19 @@
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form class="box" action="signin.component.css" method="post" [formGroup]="loginForm" (ngSubmit)="login()">
+		<i class="material-icons" style="font-size:100px;">account_circle</i>
+		<!-- <img src="/assets/logo.jpg" width="150px" height="100px"> -->
+		<input type="text" formControlName="Email" name="Email" placeholder="Email" required>
+		<span class="text-danger" *ngIf="loginForm.controls['Email'].dirty && loginForm.hasError('required','Email')">*Email address is required</span>
+		<span class="text-danger" *ngIf="loginForm.hasError('Email','Email')">*Email is Invalid</span>
+		<input type="Password" formControlName="Password" name="Password" placeholder="Password" required>
+		<span class="text-danger" *ngIf="loginForm.controls['Password'].dirty && loginForm.hasError('required','Password')">*Password is required</span>
+		<button type="button" class="btn" (click)="login()"[disabled]="!loginForm.valid" >Signin</button>
+        <div>
+        <input class="cb" type="checkbox" checked="checked" >Remember me</div>
+		<a class="new" routerLink="/register" >New Customer ? Resigter</a>
+	</form>
+</body>
